@@ -244,8 +244,13 @@ app.use((err, req, res, next) => {
 
 
 // =========================================================================
-// START SERVER
+// START SERVER (Only runs locally, Vercel wraps the app in Serverless)
 // =========================================================================
-app.listen(PORT, () => {
-    console.log(`🚀 Server running in development mode on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running in development mode on http://localhost:${PORT}`);
+    });
+}
+
+// Export the Express app for Vercel Serverless environment
+module.exports = app;

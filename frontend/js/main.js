@@ -6,8 +6,9 @@
 // the Express backend, and submitting contact messages.
 // =========================================================================
 
-// Config: Backend URL endpoint (change to live server address when deployed)
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000/api'
+    : '/api';
 
 // Static fallback data: If database is disconnected, we show these projects
 // so the UI never displays empty blocks or breaks for users.
