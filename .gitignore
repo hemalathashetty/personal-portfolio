@@ -1,0 +1,10 @@
+# Ignore node dependencies in backend
+backend/node_modules/
+
+# Ignore local environment credentials containing database passwords
+backend/.env
+
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
