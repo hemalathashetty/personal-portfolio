@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Hemalatha Shetty</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Three.js Canvas Background (For visual continuity!) -->
+    <canvas id="three-canvas"></canvas>
+
+    <div class="admin-container">
+        <!-- Back link -->
+        <div class="admin-back-link">
+            <a href="index.html" class="admin-link"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+
+        <!-- 1. AUTHORIZATION SCREEN (Shown when password is not set/incorrect) -->
+        <div id="auth-panel" class="glass-card auth-card">
+            <div class="card-icon"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Admin Authentication</h3>
+            <p>Please enter the admin password to manage projects on your website.</p>
+            <form id="auth-form">
+                <div class="form-group">
+                    <label for="admin-password">Admin Password</label>
+                    <input type="password" id="admin-password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Authenticate <i class="fa-solid fa-key"></i>
+                </button>
+            </form>
+            <div id="auth-alert" class="alert-box alert-error hidden"></div>
+        </div>
+
+        <!-- 2. DASHBOARD CONTROL PANEL (Hidden by default, shown upon auth approval) -->
+        <div id="dashboard-panel" class="hidden">
+            <div class="admin-header-actions">
+                <div class="admin-title-row">
+                    <span class="section-tag">Management Console</span>
+                    <h1>Project Dashboard</h1>
+                </div>
+                <button id="logout-btn" class="btn-logout">
+                    Logout <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+
+            <!-- Grid: Left side Add Form, Right side Table List -->
+            <div class="admin-grid">
+                <!-- Add Project Form Card -->
+                <div class="glass-card">
+                    <h3 class="admin-card-title"><i class="fa-solid fa-folder-plus"></i> Add New Project</h3>
+                    <form id="project-form">
+                        <div class="form-group">
+                            <label for="title">Project Title *</label>
+                            <input type="text" id="title" placeholder="Notice Management System" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description *</label>
+                            <textarea id="description" rows="4" placeholder="Briefly describe what this project accomplishes..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="technologies">Technologies Used * (comma-separated)</label>
+                            <input type="text" id="technologies" placeholder="HTML5, CSS3, JavaScript, Node.js" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="image_url">Image File Path / URL</label>
+                            <input type="text" id="image_url" placeholder="./assets/images/notice-system.jpg">
+                        </div>
+                        <div class="form-group">
+                            <label for="github_link">GitHub Source URL</label>
+                            <input type="url" id="github_link" placeholder="https://github.com/hemalatha-shetty/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="demo_link">Live Demo URL (Optional)</label>
+                            <input type="url" id="demo_link" placeholder="https://...">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Add Project to DB <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </form>
+                    <div id="form-alert" class="alert-box hidden"></div>
+                </div>
+
+                <!-- Projects List Card -->
+                <div class="glass-card">
+                    <h3 class="admin-card-title"><i class="fa-solid fa-list-check"></i> Current Database Projects</h3>
+                    <div class="projects-table-container">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Technologies</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projects-table-body">
+                                <!-- JS will populate rows dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="table-alert" class="alert-box hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Visual background particle controller -->
+    <script src="js/three-bg.js"></script>
+    <!-- Admin management handler -->
+    <script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemalatha Shetty | Personal Portfolio</title>
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Personal portfolio website of Hemalatha Shetty, an engineering student and aspiring software developer. Showcasing programming, databases, and full stack web development projects.">
+    <meta name="keywords" content="Hemalatha Shetty, Portfolio, Software Developer, CSBS, Computer Science, Python, Java, MySQL, Web Developer">
+    <meta name="author" content="Hemalatha Shetty">
+
+    <!-- Fonts: Outfit (For Headings) and Inter (For Body Text) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 3D Canvas Background (Rendered by Three.js) -->
+    <canvas id="three-canvas"></canvas>
+
+    <!-- Header Navigation -->
+    <header class="glass-nav">
+        <div class="nav-container">
+            <a href="#" class="logo">HS<span>.dev</span></a>
+            <nav class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="menu-btn" id="menu-btn">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Menu for Mobile Devices -->
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Main Container -->
+    <main>
+        <!-- 1. Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <span class="greet-badge">Welcome to my space</span>
+                    <h1 class="main-title">Hi, I'm <span class="highlight">Hemalatha Shetty</span></h1>
+                    <h2 class="sub-title">Engineering Student & <br><span class="typing-text">Aspiring Software Developer</span></h2>
+                    <p class="hero-desc">
+                        Passionate about crafting clean database queries, full stack web infrastructures, and highly interactive user interfaces.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Get In Touch <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- 3D Viewport Indicator: Three.js will anchor the interactive 3D model inside the scene, 
+                     but we reserve visual space on the right for layout alignment. -->
+                <div class="hero-visual">
+                    <div class="glow-sphere"></div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <a href="#about">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <span>Scroll Down</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <span class="section-tag">01. Discover</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="title-bar"></div>
+            </div>
+            
+            <div class="about-grid">
+                <!-- Introduction Card -->
+                <div class="glass-card about-card intro-card">
+                    <div class="card-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                    <h3>Introduction</h3>
+                    <p>
+                        I am Hemalatha Shetty, a Computer Science and Business Systems (CSBS) engineering student with a strong interest in software development, problem-solving, and emerging technologies. I enjoy building practical applications that solve real-world problems and continuously improving my technical skills through projects and hands-on learning. My areas of interest include Full Stack Web Development, Data Structures & Algorithms, Database Management Systems, and Python programming. I am passionate about learning new technologies and applying them to create efficient and user-friendly solutions.
+                    </p>
+                </div>
+
+                <!-- Education Card -->
+                <div class="glass-card about-card education-card">
+                    <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3>Education</h3>
+                    <div class="education-timeline">
+                        <div class="edu-item">
+                            <span class="edu-year">2023 – Present</span>
+                            <h4 class="edu-title">Bachelor of Engineering (B.E.)</h4>
+                            <p class="edu-subtitle">Computer Science and Business Systems (CSBS)</p>
+                            <p class="edu-detail">Currently pursuing my undergraduate degree in Computer Science and Business Systems, focusing on software development, programming, database systems, problem-solving, and business-oriented technology solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Objective Card -->
+                <div class="glass-card about-card objective-card">
+                    <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>Career Objective</h3>
+                    <p>
+                        To build a successful career in the software industry by continuously learning and enhancing my technical skills. I aim to contribute to innovative projects, develop efficient software solutions, and grow as a Full Stack Developer while creating technology that makes a positive impact on people's lives.
+                    </p>
+                </div>
+
+                <!-- Personal Summary Card -->
+                <div class="glass-card about-card summary-card">
+                    <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+                    <h3>Personal Summary</h3>
+                    <p>
+                        Dedicated and enthusiastic Computer Science and Business Systems student with a passion for learning and building software solutions. Strong foundation in Python, SQL, Data Structures and Algorithms, and problem-solving. Eager to gain practical industry experience through challenging projects and continuous learning. A quick learner with good teamwork, leadership, and communication skills.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <span class="section-tag">02. Capabilities</span>
+                <h2 class="section-title">My Technical Skills</h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <!-- Skills Grid displaying animated cards with progress bars and 3D hover physics -->
+            <div class="skills-grid">
+                <!-- Skill 1: Python -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-brands fa-python skill-logo python-color"></i>
+                        <h3>Python</h3>
+                        <span class="skill-pct">90%</span>
+                    </div>
+                    <p class="skill-desc">General programming, automation, scripting, and backend solutions.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="90%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 2: SQL -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-solid fa-database skill-logo sql-color"></i>
+                        <h3>SQL</h3>
+                        <span class="skill-pct">85%</span>
+                    </div>
+                    <p class="skill-desc">Relational databases, indexing, and optimizing queries in MySQL.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="85%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 3: Data Structures & Algorithms -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-solid fa-sitemap skill-logo dsa-color"></i>
+                        <h3>Data Structures & Algorithms</h3>
+                        <span class="skill-pct">80%</span>
+                    </div>
+                    <p class="skill-desc">Linked Lists, Trees, Graphs, Sorting algorithms, and Space-Time optimization.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="80%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 4: Problem Solving -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-solid fa-brain skill-logo problem-color"></i>
+                        <h3>Problem Solving</h3>
+                        <span class="skill-pct">90%</span>
+                    </div>
+                    <p class="skill-desc">Logical reasoning, algorithmic adjustments, and debugging capabilities.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="90%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 5: Full Stack Web Development -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-solid fa-layer-group skill-logo fs-color"></i>
+                        <h3>Full Stack Web Development</h3>
+                        <span class="skill-pct">85%</span>
+                    </div>
+                    <p class="skill-desc">Constructing Node.js servers, designing CSS UI layouts, and integrating MySQL.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="85%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 6: Java (Basic) -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-brands fa-java skill-logo java-color"></i>
+                        <h3>Java (Basic)</h3>
+                        <span class="skill-pct">80%</span>
+                    </div>
+                    <p class="skill-desc">Object-oriented concepts, syntax fundamentals, and basic apps.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="80%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 7: HTML -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-brands fa-html5 skill-logo html-color"></i>
+                        <h3>HTML</h3>
+                        <span class="skill-pct">95%</span>
+                    </div>
+                    <p class="skill-desc">Semantic document models and standard page elements.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="95%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 8: CSS -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-brands fa-css3-alt skill-logo css-color"></i>
+                        <h3>CSS</h3>
+                        <span class="skill-pct">90%</span>
+                    </div>
+                    <p class="skill-desc">Flexbox, Grid layouts, keyframe animations, and glassmorphism styling.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="90%" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <!-- Skill 9: JavaScript -->
+                <div class="glass-card skill-card" data-tilt>
+                    <div class="skill-header">
+                        <i class="fa-brands fa-js skill-logo js-color"></i>
+                        <h3>JavaScript</h3>
+                        <span class="skill-pct">85%</span>
+                    </div>
+                    <p class="skill-desc">ES6 syntax, Fetch API request patterns, async/await, and page handlers.</p>
+                    <div class="progress-track">
+                        <div class="progress-bar" data-width="85%" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projects Section (Dynamically Loaded From Express + MySQL) -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <span class="section-tag">03. Innovation</span>
+                <h2 class="section-title">My Projects</h2>
+                <div class="title-bar"></div>
+            </div>
+            
+            <!-- Dynamic loading indicator -->
+            <div id="projects-loader" class="loader-container">
+                <div class="scanner-spinner"></div>
+                <p>Establishing database communication... loading projects...</p>
+            </div>
+
+            <!-- Root container where dynamic Javascript will inject MySQL project cards -->
+            <div class="projects-grid" id="projects-grid"></div>
+        </section>
+
+        <!-- 5. Contact Section -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <span class="section-tag">04. Connect</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="title-bar"></div>
+            </div>
+
+            <div class="contact-container">
+                <!-- Contact info panel -->
+                <div class="glass-card contact-info">
+                    <h3>Contact Information</h3>
+                    <p class="contact-intro">Feel free to drop a message! I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+                    
+                    <div class="info-list">
+                        <div class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <span>Email Me</span>
+                                <a href="mailto:hemalatha.shetty@example.com">hemalatha.shetty@example.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <span>Location</span>
+                                <p>Mangalore, Karnataka, India</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fa-solid fa-link"></i>
+                            <div>
+                                <span>Find Me On</span>
+                                <div class="social-icons">
+                                    <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                    <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="glass-card contact-form-card">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Project Discussion" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">
+                            Send Message <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <!-- Alert Message box -->
+                    <div id="contact-alert" class="alert-box hidden"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Hemalatha Shetty. All rights reserved.</p>
+            <p class="footer-design">
+                Designed & Built with <i class="fa-solid fa-heart neon-heart"></i> & Three.js | 
+                <a href="admin.html" class="admin-link"><i class="fa-solid fa-user-lock"></i> Manage Projects</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Three.js Library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/three-bg.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
