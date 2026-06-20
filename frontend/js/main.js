@@ -19,7 +19,7 @@ const FALLBACK_PROJECTS = [
         description: "Self-healing reliability control plane protecting service chains from cascading failures. Features adaptive throttling, distributed rate limiting (using Redis Lua token bucket), and circuit breakers with backpressure propagation. Includes a real-time SRE dashboard displaying live topology, chaos engineering controls, and automated recovery actions.",
         technologies: "FastAPI, Redis, Prometheus, Grafana",
         image_url: "./assets/images/pulse-guard.jpg",
-        github_link: "https://github.com/MercuryXNexus/PulseGuard",
+        github_link: "https://github.com/MercuryXNexus/Pulse-Guard",
         demo_link: "https://hemashetty-21-pulse-guard.hf.space/"
     },
     {
@@ -28,7 +28,7 @@ const FALLBACK_PROJECTS = [
         description: "Pricing and inventory engine for automated demand forecasting and replenishment. Implements a dynamic/surge pricing algorithm driven by real-time inventory and consumer demand, and an inventory optimizer offering transfer recommendations. Features an executive business dashboard backed by an Apache Kafka event bus.",
         technologies: "FastAPI, PostgreSQL, Redis, Apache Kafka",
         image_url: "./assets/images/mercury-x.jpg",
-        github_link: "https://github.com/MercuryXNexus/Mercury-X",
+        github_link: "https://github.com/MercuryXNexus/mercury-x",
         demo_link: "https://hemashetty-21-mercury-x.hf.space/"
     },
     {
@@ -37,7 +37,7 @@ const FALLBACK_PROJECTS = [
         description: "A robust distributed task queue built as core infrastructure rather than a basic consumer app. Features independent server workers, a Redis/Postgres-backed state ledger, retry policies with backoff, dead-letter queues, and priority scheduling. Implements concurrency-safe, idempotent job claiming with Dockerized worker pools.",
         technologies: "FastAPI, Redis, PostgreSQL, Docker",
         image_url: "./assets/images/job-scheduler.jpg",
-        github_link: "https://github.com/MercuryXNexus/nexus-task-queue",
+        github_link: "https://github.com/MercuryXNexus/nexus-distributed-scheduler",
         demo_link: "https://nexus-task-queue.onrender.com"
     }
 ];
@@ -314,14 +314,31 @@ function initContactForm() {
                 // Clear form inputs
                 contactForm.reset();
             } else {
-                // Server validation error
-                alertBox.textContent = result.message || 'Error occurred. Please try again.';
-                alertBox.className = 'alert-box alert-error';
+                // Server validation error (e.g. database error)
+                throw new Error(result.message || 'Server error occurred.');
             }
         } catch (error) {
             console.error('Failed to submit contact message to backend:', error.message);
-            // System communication error (Server is offline)
-            alertBox.textContent = 'Oops! The server seems offline. Please try again later or email me directly.';
+            
+            // Generate a mailto link with pre-filled details as a robust fallback
+            const mailtoSubject = encodeURIComponent(subject || 'Project Discussion');
+            const mailtoBody = encodeURIComponent(`Hi Hemalatha,\n\n${message}\n\nBest regards,\n${name}\nEmail: ${email}`);
+            const mailtoUrl = `mailto:Hemalathashetty@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+            
+            // Automatically try to trigger the mail client opening
+            window.location.href = mailtoUrl;
+
+            // Display a sleek user alert explaining the fallback option
+            alertBox.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <span>⚠️ Database server is offline/unreachable.</span>
+                    <span>Opening your default mail client... if it did not open automatically, 
+                        <a href="${mailtoUrl}" class="fallback-email-link" style="text-decoration: underline; font-weight: bold; color: #00ffff;">
+                            click here to send your message directly via email
+                        </a>.
+                    </span>
+                </div>
+            `;
             alertBox.className = 'alert-box alert-error';
         } finally {
             // Restore button styling
