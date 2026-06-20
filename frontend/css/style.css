@@ -10,20 +10,20 @@
 
 /* 1. CSS VARIABLES (DESIGN TOKENS) */
 :root {
-    --bg-primary: #070714;      /* Background base layer (deep space violet-black) */
-    --bg-secondary: #0c0c24;    /* Slightly lighter dark layer for panels */
-    --bg-gradient: linear-gradient(135deg, #070714 0%, #030308 100%);
+    --bg-primary: #0a0e17;      /* Deep dark slate navy */
+    --bg-secondary: #131926;    /* Slightly lighter slate navy for cards */
+    --bg-gradient: linear-gradient(135deg, #0a0e17 0%, #05070c 100%);
     
-    --accent-cyan: #00f2fe;     /* Neon Cyan accent */
-    --accent-violet: #8a2be2;   /* Neon Violet accent */
-    --text-primary: #f8f9fa;    /* High contrast text */
-    --text-secondary: #a0aec0;  /* Medium contrast metadata/description text */
-    --text-muted: #64748b;      /* Low contrast placeholder text */
+    --accent-cyan: #38bdf8;     /* Electric Sky Blue */
+    --accent-violet: #6366f1;   /* Vibrant Indigo */
+    --text-primary: #f8fafc;    /* High contrast slate white */
+    --text-secondary: #94a3b8;  /* Medium contrast slate gray */
+    --text-muted: #475569;      /* Low contrast slate outline */
     
-    --glass-bg: rgba(12, 12, 36, 0.45);          /* Translucent base */
-    --glass-border: rgba(255, 255, 255, 0.08);   /* Subtle border for glass reflection */
-    --glass-glow-cyan: 0 8px 32px 0 rgba(0, 242, 254, 0.15);   /* Hover glow (Cyan) */
-    --glass-glow-violet: 0 8px 32px 0 rgba(138, 43, 226, 0.15); /* Hover glow (Violet) */
+    --glass-bg: rgba(19, 25, 38, 0.55);          /* Translucent slate base */
+    --glass-border: rgba(255, 255, 255, 0.06);   /* Subtle border for glass reflection */
+    --glass-glow-cyan: 0 8px 32px 0 rgba(56, 189, 248, 0.12);   /* Sky Blue glow */
+    --glass-glow-violet: 0 8px 32px 0 rgba(99, 102, 241, 0.12); /* Indigo glow */
     
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;

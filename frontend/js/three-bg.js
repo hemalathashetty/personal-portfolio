@@ -60,7 +60,7 @@ function createParticleField() {
 
     // Particle styling (color, size, texture)
     const material = new THREE.PointsMaterial({
-        color: 0x00f2fe,                // Cyan glow
+        color: 0x38bdf8,                // Sky Blue glow
         size: 0.05,                     // Slightly larger star size
         transparent: true,
         opacity: 0.65,
