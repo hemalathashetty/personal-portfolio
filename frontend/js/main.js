@@ -19,8 +19,8 @@ const FALLBACK_PROJECTS = [
         description: "Self-healing reliability control plane protecting service chains from cascading failures. Features adaptive throttling, distributed rate limiting (using Redis Lua token bucket), and circuit breakers with backpressure propagation. Includes a real-time SRE dashboard displaying live topology, chaos engineering controls, and automated recovery actions.",
         technologies: "FastAPI, Redis, Prometheus, Grafana",
         image_url: "./assets/images/pulse-guard.jpg",
-        github_link: "https://github.com/hemalatha-shetty/pulse-guard",
-        demo_link: "https://pulse-guard-demo.example.com"
+        github_link: "https://github.com/MercuryXNexus/PulseGuard",
+        demo_link: "https://hemashetty-21-pulse-guard.hf.space/"
     },
     {
         id: 2,
@@ -28,8 +28,8 @@ const FALLBACK_PROJECTS = [
         description: "Pricing and inventory engine for automated demand forecasting and replenishment. Implements a dynamic/surge pricing algorithm driven by real-time inventory and consumer demand, and an inventory optimizer offering transfer recommendations. Features an executive business dashboard backed by an Apache Kafka event bus.",
         technologies: "FastAPI, PostgreSQL, Redis, Apache Kafka",
         image_url: "./assets/images/mercury-x.jpg",
-        github_link: "https://github.com/hemalatha-shetty/mercury-x",
-        demo_link: "https://mercury-x-demo.example.com"
+        github_link: "https://github.com/MercuryXNexus/Mercury-X",
+        demo_link: "https://hemashetty-21-mercury-x.hf.space/"
     },
     {
         id: 3,
@@ -37,8 +37,8 @@ const FALLBACK_PROJECTS = [
         description: "A robust distributed task queue built as core infrastructure rather than a basic consumer app. Features independent server workers, a Redis/Postgres-backed state ledger, retry policies with backoff, dead-letter queues, and priority scheduling. Implements concurrency-safe, idempotent job claiming with Dockerized worker pools.",
         technologies: "FastAPI, Redis, PostgreSQL, Docker",
         image_url: "./assets/images/job-scheduler.jpg",
-        github_link: "https://github.com/hemalatha-shetty/distributed-job-scheduler",
-        demo_link: "https://job-scheduler-demo.example.com"
+        github_link: "https://github.com/MercuryXNexus/nexus-task-queue",
+        demo_link: "https://nexus-task-queue.onrender.com"
     }
 ];
 

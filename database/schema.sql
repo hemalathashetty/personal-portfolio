@@ -52,22 +52,22 @@ INSERT INTO projects (title, description, technologies, image_url, github_link, 
     'Self-healing reliability control plane protecting service chains from cascading failures. Features adaptive throttling, distributed rate limiting (using Redis Lua token bucket), and circuit breakers with backpressure propagation. Includes a real-time SRE dashboard displaying live topology, chaos engineering controls, and automated recovery actions.',
     'FastAPI, Redis, Prometheus, Grafana',
     './assets/images/pulse-guard.jpg',
-    'https://github.com/hemalatha-shetty/pulse-guard',
-    'https://pulse-guard-demo.example.com'
+    'https://github.com/MercuryXNexus/PulseGuard',
+    'https://hemashetty-21-pulse-guard.hf.space/'
 ),
 (
     'Mercury-X',
     'Pricing and inventory engine for automated demand forecasting and replenishment. Implements a dynamic/surge pricing algorithm driven by real-time inventory and consumer demand, and an inventory optimizer offering transfer recommendations. Features an executive business dashboard backed by an Apache Kafka event bus.',
     'FastAPI, PostgreSQL, Redis, Apache Kafka',
     './assets/images/mercury-x.jpg',
-    'https://github.com/hemalatha-shetty/mercury-x',
-    'https://mercury-x-demo.example.com'
+    'https://github.com/MercuryXNexus/Mercury-X',
+    'https://hemashetty-21-mercury-x.hf.space/'
 ),
 (
     'Distributed Job Scheduler',
     'A robust distributed task queue built as core infrastructure rather than a basic consumer app. Features independent server workers, a Redis/Postgres-backed state ledger, retry policies with backoff, dead-letter queues, and priority scheduling. Implements concurrency-safe, idempotent job claiming with Dockerized worker pools.',
     'FastAPI, Redis, PostgreSQL, Docker',
     './assets/images/job-scheduler.jpg',
-    'https://github.com/hemalatha-shetty/distributed-job-scheduler',
-    'https://job-scheduler-demo.example.com'
+    'https://github.com/MercuryXNexus/nexus-task-queue',
+    'https://nexus-task-queue.onrender.com'
 );
