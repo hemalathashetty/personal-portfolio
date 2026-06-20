@@ -15,30 +15,30 @@ const API_BASE_URL = window.location.hostname === 'localhost' || window.location
 const FALLBACK_PROJECTS = [
     {
         id: 1,
-        title: "Notice Management System",
-        description: "Developed a web-based notice management platform. Students can view notices relevant to their department, class, or category. Improved communication and accessibility of academic announcements.",
-        technologies: "HTML5, CSS3, JavaScript, Node.js, Express, MySQL",
-        image_url: "./assets/images/notice-system.jpg",
-        github_link: "https://github.com/hemalatha-shetty/notice-management-system",
-        demo_link: "https://notice-system-demo.example.com"
+        title: "PulseGuard",
+        description: "Self-healing reliability control plane protecting service chains from cascading failures. Features adaptive throttling, distributed rate limiting (using Redis Lua token bucket), and circuit breakers with backpressure propagation. Includes a real-time SRE dashboard displaying live topology, chaos engineering controls, and automated recovery actions.",
+        technologies: "FastAPI, Redis, Prometheus, Grafana",
+        image_url: "./assets/images/pulse-guard.jpg",
+        github_link: "https://github.com/hemalatha-shetty/pulse-guard",
+        demo_link: "https://pulse-guard-demo.example.com"
     },
     {
         id: 2,
-        title: "Student Result Management System",
-        description: "Built a system to manage and display student academic results. Allows efficient storage, retrieval, and management of result data. Implemented database integration for secure record management.",
-        technologies: "HTML5, CSS3, JavaScript, Java, Spring Boot, MySQL",
-        image_url: "./assets/images/result-system.jpg",
-        github_link: "https://github.com/hemalatha-shetty/student-result-system",
-        demo_link: "https://result-system-demo.example.com"
+        title: "Mercury-X",
+        description: "Pricing and inventory engine for automated demand forecasting and replenishment. Implements a dynamic/surge pricing algorithm driven by real-time inventory and consumer demand, and an inventory optimizer offering transfer recommendations. Features an executive business dashboard backed by an Apache Kafka event bus.",
+        technologies: "FastAPI, PostgreSQL, Redis, Apache Kafka",
+        image_url: "./assets/images/mercury-x.jpg",
+        github_link: "https://github.com/hemalatha-shetty/mercury-x",
+        demo_link: "https://mercury-x-demo.example.com"
     },
     {
         id: 3,
-        title: "Smart Light and Fan Control System",
-        description: "Developed an IoT-based system to control light brightness and fan speed. Used ESP32 and web-based controls for remote operation. Improved energy efficiency and user convenience.",
-        technologies: "ESP32, Arduino, WebSockets, HTML5, CSS3, JavaScript",
-        image_url: "./assets/images/smart-home.jpg",
-        github_link: "https://github.com/hemalatha-shetty/smart-home-control",
-        demo_link: "https://smart-home-demo.example.com"
+        title: "Distributed Job Scheduler",
+        description: "A robust distributed task queue built as core infrastructure rather than a basic consumer app. Features independent server workers, a Redis/Postgres-backed state ledger, retry policies with backoff, dead-letter queues, and priority scheduling. Implements concurrency-safe, idempotent job claiming with Dockerized worker pools.",
+        technologies: "FastAPI, Redis, PostgreSQL, Docker",
+        image_url: "./assets/images/job-scheduler.jpg",
+        github_link: "https://github.com/hemalatha-shetty/distributed-job-scheduler",
+        demo_link: "https://job-scheduler-demo.example.com"
     }
 ];
 

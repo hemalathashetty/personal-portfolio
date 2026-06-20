@@ -42,32 +42,32 @@ CREATE TABLE IF NOT EXISTS contact (
 -- =========================================================================
 -- SEED DATA (INITIAL DATA INSERTION)
 -- =========================================================================
--- We will insert your customized projects into the projects table so the frontend has data to fetch immediately.
+-- We will insert your new advanced projects into the projects table so the frontend has data to fetch immediately.
 
 TRUNCATE TABLE projects; -- Clear the table first to prevent duplicate entries on rerun
 
 INSERT INTO projects (title, description, technologies, image_url, github_link, demo_link) VALUES
 (
-    'Notice Management System',
-    'Developed a web-based notice management platform. Students can view notices relevant to their department, class, or category. Improved communication and accessibility of academic announcements.',
-    'HTML5, CSS3, JavaScript, Node.js, Express, MySQL',
-    './assets/images/notice-system.jpg',
-    'https://github.com/hemalatha-shetty/notice-management-system',
-    'https://notice-system-demo.example.com'
+    'PulseGuard',
+    'Self-healing reliability control plane protecting service chains from cascading failures. Features adaptive throttling, distributed rate limiting (using Redis Lua token bucket), and circuit breakers with backpressure propagation. Includes a real-time SRE dashboard displaying live topology, chaos engineering controls, and automated recovery actions.',
+    'FastAPI, Redis, Prometheus, Grafana',
+    './assets/images/pulse-guard.jpg',
+    'https://github.com/hemalatha-shetty/pulse-guard',
+    'https://pulse-guard-demo.example.com'
 ),
 (
-    'Student Result Management System',
-    'Built a system to manage and display student academic results. Allows efficient storage, retrieval, and management of result data. Implemented database integration for secure record management.',
-    'HTML5, CSS3, JavaScript, Java, Spring Boot, MySQL',
-    './assets/images/result-system.jpg',
-    'https://github.com/hemalatha-shetty/student-result-system',
-    'https://result-system-demo.example.com'
+    'Mercury-X',
+    'Pricing and inventory engine for automated demand forecasting and replenishment. Implements a dynamic/surge pricing algorithm driven by real-time inventory and consumer demand, and an inventory optimizer offering transfer recommendations. Features an executive business dashboard backed by an Apache Kafka event bus.',
+    'FastAPI, PostgreSQL, Redis, Apache Kafka',
+    './assets/images/mercury-x.jpg',
+    'https://github.com/hemalatha-shetty/mercury-x',
+    'https://mercury-x-demo.example.com'
 ),
 (
-    'Smart Light and Fan Control System',
-    'Developed an IoT-based system to control light brightness and fan speed. Used ESP32 and web-based controls for remote operation. Improved energy efficiency and user convenience.',
-    'ESP32, Arduino, WebSockets, HTML5, CSS3, JavaScript',
-    './assets/images/smart-home.jpg',
-    'https://github.com/hemalatha-shetty/smart-home-control',
-    'https://smart-home-demo.example.com'
+    'Distributed Job Scheduler',
+    'A robust distributed task queue built as core infrastructure rather than a basic consumer app. Features independent server workers, a Redis/Postgres-backed state ledger, retry policies with backoff, dead-letter queues, and priority scheduling. Implements concurrency-safe, idempotent job claiming with Dockerized worker pools.',
+    'FastAPI, Redis, PostgreSQL, Docker',
+    './assets/images/job-scheduler.jpg',
+    'https://github.com/hemalatha-shetty/distributed-job-scheduler',
+    'https://job-scheduler-demo.example.com'
 );
