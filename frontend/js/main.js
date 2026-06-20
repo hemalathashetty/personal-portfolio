@@ -265,85 +265,46 @@ function renderProjects(projectsArray) {
         projectsGrid.insertAdjacentHTML('beforeend', cardHTML);
     });
 }
-
 // =========================================================================
-// 6. CONTACT FORM SUBMISSION (POST /api/contact)
+// 6. CONTACT COPY-TO-CLIPBOARD ACTIONS
 // =========================================================================
-// Purpose: Captures data from user form, sanitizes and sends it via JSON
-// payload to Node.js backend. Displays success or error dialog alert notifications.
+// Purpose: Implements direct connection shortcuts, including clipboard copy
+// and visual alert feedback, bypassing database connections entirely.
 function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const alertBox = document.getElementById('contact-alert');
+    const copyBtn = document.getElementById('copy-email-btn');
+    const alertBox = document.getElementById('copy-alert');
 
-    if (!contactForm) return;
+    if (!copyBtn) return;
 
-    contactForm.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Block standard browser reload behavior on submit
+    copyBtn.addEventListener('click', () => {
+        const emailAddress = "Hemalathashetty@gmail.com";
+        
+        // Use modern navigator clipboard API
+        navigator.clipboard.writeText(emailAddress)
+            .then(() => {
+                // Show visual alert success message
+                if (alertBox) {
+                    alertBox.classList.remove('hidden');
+                    // Automatically hide alert box after 4 seconds
+                    setTimeout(() => {
+                        alertBox.classList.add('hidden');
+                    }, 4000);
+                }
 
-        // Collect inputs from inputs
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-
-        // Show submitting state on submit button
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = 'Sending... <i class="fa-solid fa-spinner fa-spin"></i>';
-
-        // Reset alert box visibility
-        alertBox.className = 'alert-box hidden';
-
-        try {
-            // Send JSON post request payload to backend
-            const response = await fetch(`${API_BASE_URL}/contact`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ name, email, subject, message })
-            });
-
-            const result = await response.json();
-
-            if (response.ok && result.success) {
-                // Success message
-                alertBox.textContent = result.message || 'Your message has been sent successfully!';
-                alertBox.className = 'alert-box alert-success';
+                // Change button state/text temporarily
+                const originalHTML = copyBtn.innerHTML;
+                copyBtn.innerHTML = '<i class="fa-solid fa-check" style="color: #00f2fe;"></i> Email Copied!';
+                copyBtn.style.borderColor = '#00f2fe';
+                copyBtn.style.color = '#00f2fe';
                 
-                // Clear form inputs
-                contactForm.reset();
-            } else {
-                // Server validation error (e.g. database error)
-                throw new Error(result.message || 'Server error occurred.');
-            }
-        } catch (error) {
-            console.error('Failed to submit contact message to backend:', error.message);
-            
-            // Generate a mailto link with pre-filled details as a robust fallback
-            const mailtoSubject = encodeURIComponent(subject || 'Project Discussion');
-            const mailtoBody = encodeURIComponent(`Hi Hemalatha,\n\n${message}\n\nBest regards,\n${name}\nEmail: ${email}`);
-            const mailtoUrl = `mailto:Hemalathashetty@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-            
-            // Automatically try to trigger the mail client opening
-            window.location.href = mailtoUrl;
-
-            // Display a sleek user alert explaining the fallback option
-            alertBox.innerHTML = `
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <span>⚠️ Database server is offline/unreachable.</span>
-                    <span>Opening your default mail client... if it did not open automatically, 
-                        <a href="${mailtoUrl}" class="fallback-email-link" style="text-decoration: underline; font-weight: bold; color: #00ffff;">
-                            click here to send your message directly via email
-                        </a>.
-                    </span>
-                </div>
-            `;
-            alertBox.className = 'alert-box alert-error';
-        } finally {
-            // Restore button styling
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane"></i>';
-        }
+                setTimeout(() => {
+                    copyBtn.innerHTML = originalHTML;
+                    copyBtn.style.borderColor = '';
+                    copyBtn.style.color = '';
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Could not copy text to clipboard: ', err);
+            });
     });
 }
